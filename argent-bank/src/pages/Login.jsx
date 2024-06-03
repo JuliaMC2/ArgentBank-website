@@ -2,7 +2,7 @@ import '../index.css'
 
 import {Link} from 'react-router-dom'
 
-import logo from '../assets/img/argentBankLogo.png'
+import logo from '/assets/img/argentBankLogo.png'
 
 export default function Login() {
     return (
