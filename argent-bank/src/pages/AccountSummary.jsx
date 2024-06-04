@@ -1,30 +1,13 @@
 import '../index.css'
 
-import {Link} from 'react-router-dom'
+import Header from "../components/Header.jsx"
+import Footer from "../components/Footer.jsx"
+
 
 export default function AccountSummary() {
     return (
     <>
-    <nav className="main-nav">
-      <Link to="/" className="main-nav-logo">
-        <img
-          className="main-nav-logo-image"
-          src="./img/argentBankLogo.png"
-          alt="Argent Bank Logo"
-        />
-        <h1 className="sr-only">Argent Bank</h1>
-      </Link>
-      <div>
-        <Link to="/Login" className="main-nav-item">
-          <i className="fa fa-user-circle"></i>
-          Tony
-        </Link>
-        <Link to="/" className="main-nav-item">
-          <i className="fa fa-sign-out"></i>
-          Sign Out
-        </Link>
-      </div>
-    </nav>
+    <Header />
     <main className="main bg-dark">
       <div className="header">
         <h1>Welcome back<br />Tony Jarvis!</h1>
@@ -62,9 +45,7 @@ export default function AccountSummary() {
         </div>
       </section>
     </main>
-    <footer className="footer">
-      <p className="footer-text">Copyright 2020 Argent Bank</p>
-    </footer>
+    <Footer />
     </>
 )
 }
