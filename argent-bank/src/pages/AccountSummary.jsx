@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux'
 
 export default function AccountSummary() {
   const accounts = useSelector((state) => state.accounts.value);
-  const renderMe = accounts.map (object =>     <AccountBalance title={object.title} amount={object.amount} description={object.description} key={object.title}/>)
+  const renderMe = accounts.map ((object, idx) => <AccountBalance id={idx} key={object.title}/>)
 
   return (
     <>
