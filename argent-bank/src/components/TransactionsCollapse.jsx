@@ -10,7 +10,7 @@ const dispatch=useDispatch()
 return (
     <>
         <button className="transaction-button" onClick={() => dispatch(toggleTransactionsCollapse(props.id))}>
-            {isCollapseOpen ? 'View' : 'Hide'} transactions
+            {isCollapseOpen ? 'Hide' : 'View'} transactions
         </button>
     </>
 )

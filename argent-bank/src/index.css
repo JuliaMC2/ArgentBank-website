@@ -216,6 +216,7 @@ body, #root{
 
 .account {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   border: 1px solid black;
@@ -274,6 +275,105 @@ body, #root{
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+}
+
+.transactions-wrapper {
+  width: 100%;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  border-width: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+.transactions-wrapper-header {
+  margin-top: 20px;
+  padding-left:10px;
+  width:calc(100% - 10px);
+  display: flex;
+}
+
+.transactions-wrapper-header-date {
+  width: 20%;
+}
+
+.transactions-wrapper-header-description {
+  width: 50%;
+}
+
+.transactions-wrapper-header-amount {
+  width: 12%;
+}
+
+.transactions-wrapper-header-balance {
+  width: 13%;
+}
+
+.transactions-wrapper-header-collapse {
+  width: 5%;
+}
+
+.transactions-wrapper-content {
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  padding-left:10px;
+  width:calc(100% - 10px);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #00bc77;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.transactions-wrapper-content-date {
+  width: 20%;
+}
+
+.transactions-wrapper-content-description {
+  width: 50%;
+}
+
+.transactions-wrapper-content-amount {
+  width: 12%;
+}
+
+.transactions-wrapper-content-balance {
+  width: 13%;
+}
+
+.transactions-wrapper-content-collapse {
+  width: 5%;
+  cursor: pointer;
+}
+
+.transactions-wrapper-content-collapse-icon {
+  width: 20px;
+  object-fit: contain;
+}
+
+.transactions-wrapper-content-details{
+  margin-top: 20px;
+  margin-bottom: 5px;
+
+  width: 100%;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.transactions-wrapper-content-details-header{
+  width:20%;
+  font-weight: 100;
+  margin-bottom: 5px;
+}
+
+.transactions-wrapper-content-details-value {
+  width:80%;
+  margin-bottom: 5px;
 }
 
 @media (min-width: 720px) {
