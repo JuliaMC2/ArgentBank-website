@@ -18,7 +18,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           },{
             "id":"1",
             "date":"27/02/2020",
@@ -28,7 +30,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           },{
             "id":"2",
             "date":"27/02/2020",
@@ -38,7 +42,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           },{
             "id":"3",
             "date":"27/02/2020",
@@ -48,7 +54,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           }]
       },{
         "title":"Argent Bank Savings (x6712)",
@@ -65,7 +73,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           },{
             "id":"1",
             "date":"27/02/2020",
@@ -75,7 +85,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           },{
             "id":"2",
             "date":"27/02/2020",
@@ -85,7 +97,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           },{
             "id":"3",
             "date":"27/02/2020",
@@ -95,7 +109,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           }]
       },{
         "title":"Argent Bank Credit Card (x8349)",
@@ -112,7 +128,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           },{
             "id":"1",
             "date":"27/02/2020",
@@ -122,7 +140,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           },{
             "id":"2",
             "date":"27/02/2020",
@@ -132,7 +152,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           },{
             "id":"3",
             "date":"27/02/2020",
@@ -142,7 +164,9 @@ export const accountsSlice = createSlice({
             "type":"Electronic",
             "category":"Food",
             "note":"Lorem Ipsum",
-            "isCollapseOpen":false
+            "isCollapseOpen":false,
+            "isCategoryBeingEdited":false,
+            "isNoteBeingEdited":false
           }]
   }],
   },
@@ -155,9 +179,35 @@ export const accountsSlice = createSlice({
       const transactionId=action.payload.substring(action.payload.indexOf('_')+1)
       state.value[accountId].transactions[transactionId].isCollapseOpen = !current(state.value)[accountId].transactions[transactionId].isCollapseOpen
     },
+    editCategory: (state, action) => {
+      const accountId=action.payload.substring(0, action.payload.indexOf('_'))
+      const transactionId=action.payload.substring(action.payload.indexOf('_')+1)
+      state.value[accountId].transactions[transactionId].isCategoryBeingEdited=true
+    },
+    setCategory: (state, action) => {
+      const accountId=action.payload.substring(0, action.payload.indexOf('_'))
+      const remainder=action.payload.substring(action.payload.indexOf('_')+1)
+      const transactionId=remainder.substring(0, remainder.indexOf('_'))
+      const category=remainder.substring(remainder.indexOf('_')+1)
+      state.value[accountId].transactions[transactionId].isCategoryBeingEdited=false
+      state.value[accountId].transactions[transactionId].category = category
+    },
+    editNote: (state, action) => {
+      const accountId=action.payload.substring(0, action.payload.indexOf('_'))
+      const transactionId=action.payload.substring(action.payload.indexOf('_')+1)
+      state.value[accountId].transactions[transactionId].isNoteBeingEdited=true
+    },
+    setNote: (state, action) => {
+      const accountId=action.payload.substring(0, action.payload.indexOf('_'))
+      const remainder=action.payload.substring(action.payload.indexOf('_')+1)
+      const transactionId=remainder.substring(0, remainder.indexOf('_'))
+      const note=remainder.substring(remainder.indexOf('_')+1)
+      state.value[accountId].transactions[transactionId].isNoteBeingEdited=false
+      state.value[accountId].transactions[transactionId].note = note
+    },
   }
   })
 
-export const { toggleTransactionsCollapse, toggleTransactionCollapse } = accountsSlice.actions
+export const { toggleTransactionsCollapse, toggleTransactionCollapse, setCategory, setNote, editCategory, editNote } = accountsSlice.actions
 
 export default accountsSlice.reducer

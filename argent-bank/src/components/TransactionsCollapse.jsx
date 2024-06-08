@@ -7,9 +7,13 @@ const accounts = useSelector((state) => state.accounts.value)
 const account = accounts.filter((_,idx) => idx === props.id)
 const isCollapseOpen = account[0].isCollapseOpen;
 const dispatch=useDispatch()
+const onClickFunction = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    dispatch(toggleTransactionsCollapse(props.id))};
 return (
     <>
-        <button className="transaction-button" onClick={() => dispatch(toggleTransactionsCollapse(props.id))}>
+        <button className="transaction-button" onClick={onClickFunction}>
             {isCollapseOpen ? 'Hide' : 'View'} transactions
         </button>
     </>

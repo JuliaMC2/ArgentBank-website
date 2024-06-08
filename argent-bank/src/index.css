@@ -376,6 +376,11 @@ body, #root{
   margin-bottom: 5px;
 }
 
+.transactions-wrapper-content-details-edit {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
 @media (min-width: 720px) {
   .account {
     flex-direction: row;
