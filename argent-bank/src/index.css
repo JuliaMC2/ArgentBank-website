@@ -51,6 +51,10 @@ body, #root{
   color: #42b983;
 }
 
+.header-user-name {
+  padding-right: 5px;
+}
+
 .main-nav-item {
   text-decoration: none;
   margin-right: 0.5rem;
@@ -63,6 +67,7 @@ body, #root{
 .main-nav-logo {
   display: flex;
   align-items: center;
+  width: 200px;
 }
 
 .main-nav-logo-image {
@@ -252,7 +257,7 @@ body, #root{
   flex: 1;
 }
 
-.edit-button {
+.form-button {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
@@ -393,4 +398,49 @@ body, #root{
   .transaction-button {
     width: 200px;
   }
+
+.user-name-form-header {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user-name-edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 25%;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.user-name-edit-form-label {
+  color:#020202;
+  width : calc(50% - 30px);
+  text-align:right;
+  padding-top: 3px;
+  margin: 10px 10px 10px 10px;
+}
+.user-name-edit-form-input {
+  width : calc(50% - 30px);
+  padding-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.user-name-edit-form-input:disabled{
+  background-color: #a0a0a0;
+  color: black;
+}
+
+.form-button {
+  margin: 10px 10px 10px 10px;
+  width: 100px;
+}
+
 }

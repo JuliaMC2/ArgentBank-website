@@ -9,6 +9,7 @@ import logo from '/assets/img/argentBankLogo.png'
 
 export default function Header() {
     const token = useSelector((state) => state.token.value);
+    const userName = useSelector((state) => state.connectedUser.value).userName
     const dispatch = useDispatch()
     return (
     <>
@@ -28,6 +29,7 @@ export default function Header() {
             Sign In
         </Link> : 
         <Link to="/" className="main-nav-item" onClick={() => dispatch(reset())}>
+            <span className="header-user-name">{userName}</span>
             <i className="fa fa-user-circle"></i>
             Sign Out
         </Link>
