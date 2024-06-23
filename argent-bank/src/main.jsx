@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/accounts/:userId",
+    path: "/accounts",
     element: <AccountSummary />,
   },
   {
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <Error_404 />
+    element: <Error_404 msg="It looks like the page you are trying to reach does not exist"/>
   }
   
 

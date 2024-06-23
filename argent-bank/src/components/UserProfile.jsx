@@ -4,7 +4,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleUserCollapse, setUserName } from '../store/connectedUserSlice.jsx'
 
-export default function InfoCards() {
+export default function UserProfile() {
 
 const connectedUser = useSelector((state) => state.connectedUser.value);
 let userName = connectedUser.userName

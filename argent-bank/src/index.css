@@ -207,6 +207,17 @@ body, #root{
   font-size: 1.2rem;
 }
 
+.sign-in-error {
+  text-align: center;
+  color: red;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top:5px;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 .footer {
   display: flex;
   justify-content: center;

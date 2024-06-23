@@ -8,7 +8,7 @@ import { reset } from '../store/tokenSlice'
 import logo from '/assets/img/argentBankLogo.png'
 
 export default function Header() {
-    const token = useSelector((state) => state.token.value);
+    const isConnected = useSelector((state) => state.token.value).status;
     const userName = useSelector((state) => state.connectedUser.value).userName
     const dispatch = useDispatch()
     return (
@@ -23,7 +23,7 @@ export default function Header() {
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
       <div>
-        {token === '' ?
+        {isConnected !== 'ok' ?
         <Link to="/login" className="main-nav-item" >
             <i className="fa fa-user-circle"></i>
             Sign In
