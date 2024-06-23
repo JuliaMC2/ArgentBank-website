@@ -4,7 +4,6 @@ import '../index.css'
 
 import Header from "../components/Header.jsx"
 import Footer from "../components/Footer.jsx"
-import Error_404 from "./Error_404.jsx"
 import AccountBalance from "../components/AccountBalance.jsx"
 import UserProfile from '../components/UserProfile.jsx'
 
