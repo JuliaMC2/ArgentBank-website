@@ -1,6 +1,8 @@
 import '../index.css'
 
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
+
 import { login } from '../store/tokenSlice'
 
 import Header from "../components/Header.jsx"
@@ -9,13 +11,17 @@ import Footer from "../components/Footer.jsx"
 
 export default function Login() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const errorString = useSelector((state) => state.token.value.error)
   let email=''
   let password=''
-  const tryToLogin = function(event) {
+  const tryToLogin = async function(event) {
     event.preventDefault()
     event.stopPropagation()
-    dispatch(login({email, password}))
+    const result = await dispatch(login({email, password}))
+
+    if (login.fulfilled.match(result))
+      navigate("/accounts")
   } 
     return (
   <>

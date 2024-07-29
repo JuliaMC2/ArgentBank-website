@@ -40,7 +40,6 @@ export const login = createAsyncThunk('token/login',
   }
  )
 
-
 export const tokenSlice = createSlice({
   name: 'token',
   initialState: {
@@ -77,7 +76,6 @@ export const tokenSlice = createSlice({
           state.value.value=action.payload
           state.value.status="ok"
           state.value.error=""
-          window.location.href ="/accounts"
       })
       .addCase(login.rejected, (state, action) => {
         state.value.value=""
